@@ -1,5 +1,7 @@
 # Colon Cancer Detection from Histopathology Images
 
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gyanasaiadusumilli/colon-cancer-detection/blob/main/notebooks/train_on_colab.ipynb)
+
 Binary classification of colon tissue images as **benign** or **adenocarcinoma**, using OpenCV preprocessing and a transfer-learning CNN (PyTorch).
 
 > Originally built during my undergraduate studies. Rebuilt and extended in 2026 after the original codebase was lost.
@@ -49,6 +51,9 @@ Test set (n = _fill in_), ResNet-18 with CLAHE:
 ```
 colon-cancer-detection/
 ├── app.py                 # Streamlit demo
+├── deploy/huggingface/    # Dockerfile and Space config for the live demo
+├── notebooks/
+│   └── train_on_colab.ipynb  # One-click train, evaluate and deploy
 ├── scripts/
 │   └── split_data.py      # Stratified train/val/test split CSV
 ├── src/
@@ -62,6 +67,10 @@ colon-cancer-detection/
 ```
 
 ## How to run
+
+**Easiest: Google Colab.** Click the "Open in Colab" badge above and run the notebook top to bottom. It downloads the data, trains on a free GPU, prints the test results, and publishes the live demo to Hugging Face Spaces.
+
+**Locally:**
 
 ```bash
 pip install -r requirements.txt
