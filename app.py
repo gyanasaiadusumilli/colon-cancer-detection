@@ -80,7 +80,7 @@ if samples:
     cols = st.columns(len(samples))
     for col, path in zip(cols, samples):
         col.image(str(path))
-        if col.button(path.stem.replace("_", " ").title(), key=path.name, use_container_width=True):
+        if col.button(path.stem.replace("_", " ").title(), key=path.name):
             st.session_state["sample"] = str(path)
 
 uploaded = st.file_uploader("Or upload your own image", type=["jpg", "jpeg", "png"])
