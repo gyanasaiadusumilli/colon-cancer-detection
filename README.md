@@ -1,6 +1,6 @@
 # Colon Cancer Detection from Histopathology Images
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gyanasaiadusumilli/colon-cancer-detection/blob/main/notebooks/train_on_colab.ipynb)
+[![Live demo](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://colon-cancer-detection-4mfynxys2lkiqpzwvwab44.streamlit.app) [![Model on Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Model-Gyana23%2Fcolon--cancer--resnet18-yellow)](https://huggingface.co/Gyana23/colon-cancer-resnet18) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gyanasaiadusumilli/colon-cancer-detection/blob/main/notebooks/train_on_colab.ipynb)
 
 Binary classification of colon tissue images as **benign** or **adenocarcinoma**, using OpenCV preprocessing and a transfer-learning CNN (PyTorch).
 
