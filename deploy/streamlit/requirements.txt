@@ -1,0 +1,10 @@
+# CPU-only PyTorch keeps the free Streamlit Cloud app small and fast to start
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.6.0+cpu
+torchvision==0.21.0+cpu
+streamlit==1.39.0
+opencv-python-headless==4.10.0.84
+pandas==2.2.3
+scikit-learn==1.5.2
+matplotlib==3.9.2
+huggingface_hub>=0.24

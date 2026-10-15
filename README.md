@@ -51,7 +51,7 @@ Test set (n = _fill in_), ResNet-18 with CLAHE:
 ```
 colon-cancer-detection/
 ├── app.py                 # Streamlit demo
-├── deploy/huggingface/    # Dockerfile and Space config for the live demo
+├── deploy/streamlit/      # Streamlit Community Cloud entry point (CPU-only PyTorch)
 ├── notebooks/
 │   └── train_on_colab.ipynb  # One-click train, evaluate and deploy
 ├── scripts/
@@ -68,7 +68,9 @@ colon-cancer-detection/
 
 ## How to run
 
-**Easiest: Google Colab.** Click the "Open in Colab" badge above and run the notebook top to bottom. It downloads the data, trains on a free GPU, prints the test results, and publishes the live demo to Hugging Face Spaces.
+**Easiest: Google Colab.** Click the "Open in Colab" badge above and run the notebook top to bottom. It downloads the data, trains on a free GPU, prints the test results, and uploads the trained model to a Hugging Face model page.
+
+**Live demo on Streamlit Community Cloud (free):** at share.streamlit.io, create an app from this repo with main file `deploy/streamlit/app.py`. The app downloads the trained model from the Hugging Face repo set in `MODEL_REPO` (default `gyanasaiadusumilli/colon-cancer-resnet18`).
 
 **Locally:**
 

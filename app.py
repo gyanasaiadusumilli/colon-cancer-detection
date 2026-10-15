@@ -2,8 +2,12 @@
 
 Run locally:
     streamlit run app.py
+
+If outputs/best_model.pt is missing, the trained model, its test metrics and the sample
+images are downloaded from the Hugging Face model repo named in MODEL_REPO.
 """
 import json
+import os
 from pathlib import Path
 
 import cv2
@@ -18,8 +22,28 @@ from src.utils import get_device
 CKPT = Path("outputs/best_model.pt")
 METRICS = Path("outputs/metrics.json")
 EXAMPLES = Path("examples")
+MODEL_REPO = os.environ.get("MODEL_REPO", "gyanasaiadusumilli/colon-cancer-resnet18")
 
 st.set_page_config(page_title="Colon Cancer Detection", page_icon="🔬", layout="centered")
+
+
+@st.cache_resource(show_spinner="Downloading the trained model...")
+def _download_assets():
+    # Cached only when it succeeds; a failed download raises and is retried on the next visit
+    from huggingface_hub import snapshot_download
+    snapshot_download(MODEL_REPO, local_dir=".", allow_patterns=["outputs/*", "examples/*"])
+
+
+def fetch_assets():
+    """Download the model, metrics and sample images once, if they are not already here."""
+    if not CKPT.exists():
+        try:
+            _download_assets()
+        except Exception as e:  # show a clear message instead of crashing
+            st.warning(f"Could not download the model from {MODEL_REPO}: {e}")
+
+
+fetch_assets()
 st.title("Colon Cancer Detection")
 st.write(
     "Upload an H&E stained colon tissue image, or pick a sample below. "
@@ -45,7 +69,8 @@ def get_model():
 
 
 if not CKPT.exists():
-    st.error("Model file not found. Train the model first (see notebooks/train_on_colab.ipynb).")
+    st.error("The model isn't available yet. Train it with notebooks/train_on_colab.ipynb, "
+             "or set MODEL_REPO to a Hugging Face repo that contains outputs/best_model.pt.")
     st.stop()
 
 img = None
