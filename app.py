@@ -22,7 +22,7 @@ from src.utils import get_device
 CKPT = Path("outputs/best_model.pt")
 METRICS = Path("outputs/metrics.json")
 EXAMPLES = Path("examples")
-MODEL_REPO = os.environ.get("MODEL_REPO", "gyanasaiadusumilli/colon-cancer-resnet18")
+MODEL_REPO = os.environ.get("MODEL_REPO", "Gyana23/colon-cancer-resnet18")
 
 st.set_page_config(page_title="Colon Cancer Detection", page_icon="🔬", layout="centered")
 

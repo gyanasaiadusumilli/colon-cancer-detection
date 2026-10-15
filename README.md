@@ -83,7 +83,7 @@ colon-cancer-detection/
 
 **Easiest: Google Colab.** Click the "Open in Colab" badge above and run the notebook top to bottom. It downloads the data, trains on a free GPU, prints the test results, and uploads the trained model to a Hugging Face model page.
 
-**Live demo on Streamlit Community Cloud (free):** at share.streamlit.io, create an app from this repo with main file `deploy/streamlit/app.py`. The app downloads the trained model from the Hugging Face repo set in `MODEL_REPO` (default `gyanasaiadusumilli/colon-cancer-resnet18`).
+**Live demo on Streamlit Community Cloud (free):** at share.streamlit.io, create an app from this repo with main file `deploy/streamlit/app.py`. The app downloads the trained model from the Hugging Face repo set in `MODEL_REPO` (default `Gyana23/colon-cancer-resnet18`, model page: https://huggingface.co/Gyana23/colon-cancer-resnet18).
 
 **Locally:**
 
